@@ -5,9 +5,13 @@
 <template lang="pug">
 div
   User
+  div
+    | {{users}}
 </template>
 
 <script>
+import {Users} from '@/utils/enums/Users.js'
+
 import User from '@/components/User'
 
 export default {
@@ -22,7 +26,9 @@ export default {
     User,
   },
   data() {
-    return {};
+    return {
+      users: Users,
+    };
   },
   methods: {},
 };
