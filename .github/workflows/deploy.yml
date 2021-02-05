@@ -1,0 +1,34 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install -g yarn
+    - run: yarn
+    - name: Add TURN server username
+      run: echo "VUE_APP_TURN_USERNAME = ${{ secrets.TURN_USERNAME }}" >> .env.production.local
+    - name: Add TURN server credential
+      run: echo "VUE_APP_TURN_CREDENTIAL = ${{ secrets.TURN_CREDENTIAL }}" >> .env.production.local
+    - name: Configuring git
+      run: git config --global user.email "cody@codysherman.com" && git config --global user.name "GitHub Actions"
+    - name: Configuring ssh
+      run: echo "${{ secrets.DEPLOY_KEY }}" > ~/deploy_key && chmod 600 ~/deploy_key
+    - name: Building and Deploying
+      run: GIT_SSH_COMMAND='ssh -i ~/deploy_key' ./deploy.sh

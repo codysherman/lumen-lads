@@ -1,0 +1,49 @@
+{
+  "name": "lumen-lads",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "yarn serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "author": "Cody Sherman <cody@codysherman.com> (https://codysherman.com)",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "frow": "^3.3.2",
+    "vue": "^2.6.11",
+    "vue-meta": "^2.4.0",
+    "vue-router": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.4.4",
+    "@vue/cli-plugin-eslint": "^4.4.4",
+    "@vue/cli-service": "^4.4.4",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.0.0",
+    "eslint-config-begin": "^0.1.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-vue": "^7.0.1",
+    "husky": ">=4",
+    "lint-staged": ">=10",
+    "sass": "^1.26.8",
+    "sass-loader": "^10.0.3",
+    "source-map": "^0.7.3",
+    "vue-cli-plugin-pug": "^1.0.7",
+    "vue-svg-loader": "^0.16.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint"
+    ]
+  }
+}
