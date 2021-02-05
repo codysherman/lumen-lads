@@ -7,6 +7,7 @@ div
 </template>
 
 <script>
+import Header from '@/components/Header'
 
 export default {
   name: 'Home',
@@ -16,7 +17,8 @@ export default {
       'Lumen Lads',
     };
   },
-  components: {},
+  components: {
+  },
   data() {
     return {};
   },
