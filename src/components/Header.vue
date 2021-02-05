@@ -11,7 +11,7 @@ header
 header
   .frow.row-between.items-center.height-100
     div
-      div Header
+      div Lumen Lads
     div
       div Settings
 </template>
