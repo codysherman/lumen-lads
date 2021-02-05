@@ -15,4 +15,7 @@ module.exports = {
       .loader('vue-svg-loader')
       .options({ svgo: { plugins: [ { removeDimensions: true }, { removeViewBox: false } ] } });
   },
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/lumen-lads/'
+    : '/',
 };
