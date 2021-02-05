@@ -24,6 +24,8 @@ jobs:
     - run: yarn
     - name: Configuring git
       run: git config --global user.email "cody@codysherman.com" && git config --global user.name "GitHub Actions"
+    - name: Set git main branch to 'main' from 'master'
+      run: git config --global init.defaultBranch main
     - name: Configuring ssh
       run: echo "${{ secrets.DEPLOY_KEY }}" > ~/deploy_key && chmod 600 ~/deploy_key
     - name: Building and Deploying
