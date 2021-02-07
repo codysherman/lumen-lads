@@ -11,9 +11,10 @@ header
 header
   .frow.row-between.items-center.height-100
     div
-      div Header
-    div
-      div Settings
+      a(href="/") Header
+    .frow.row-between.items-center.height-100
+      .mx-10 Settings
+      a(href="/profile") Profile
 </template>
 
 <script>
