@@ -13,7 +13,7 @@ div
 <script>
 import { Users } from '@/utils/enums/Users';
 
-import User from '@/components/User.vue';
+import User from '@/components/User';
 
 export default {
   name: 'Home',
