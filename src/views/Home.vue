@@ -1,18 +1,19 @@
 <style scoped lang="sass">
-
+  .user-list:hover
+    background-color: red 
 </style>
 
 <template lang="pug">
 div
   User
-  div
-    | {{users}}
+  div(v-for="user in users")
+    .user-list {{ user.name }}
 </template>
 
 <script>
-import {Users} from '@/utils/enums/Users.js'
+import { Users } from '@/utils/enums/Users.js'
 
-import User from '@/components/User'
+import User from '@/components/User.vue'
 
 export default {
   name: 'Home',
