@@ -5,16 +5,20 @@ header
   background-color: #bddef8
   color: white
   padding: 5px 10px
+
+.navigate:hover
+    cursor: pointer
+    background-color: red
 </style>
 
 <template lang="pug">
 header
   .frow.row-between.items-center.height-100
     div
-      a(href="/") Header
+      router-link.navigate(tag="div" to="/") Header
     .frow.row-between.items-center.height-100
       .mx-10 Settings
-      a(href="/profile") Profile
+      router-link.navigate(tag="div" to="Profile") Profile
 </template>
 
 <script>
