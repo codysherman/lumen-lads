@@ -4,7 +4,7 @@
 
 <template lang="pug">
 div
-  form
+  form(@submit.prevent="submitForm")
     label(
       for="cryptoType"
     )
@@ -13,6 +13,7 @@ div
       type="text"
       id="cryptoType"
       name="cryptoType"
+      v-model="inputCryptoType"
     )
     label(
       for="accountAddress"
@@ -22,7 +23,12 @@ div
       type="text"
       id="accountAddress"
       name="accountAddress"
+      v-model="inputAccountAddress"
     )
+    button(
+      type="submit"
+    )
+      | Submit
 
 </template>
 
@@ -37,8 +43,15 @@ export default {
   },
   components: { },
   data() {
-    return { };
+    return {
+      inputCryptoType: '',
+      inputAccountAddress: '',
+    };
   },
-  methods: {},
+  methods: {
+    submitForm() {
+      console.log('hello', this.inputCryptoType, this.inputAccountAddress);
+    },
+  },
 };
 </script>
