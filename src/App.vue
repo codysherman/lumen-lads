@@ -17,13 +17,11 @@
 </template>
 
 <script>
-import Header from '@/components/Header'
+import Header from '@/components/Header';
 
 export default {
   name: 'App',
   metaInfo: { title: 'Lumen Lads' },
-  components: {
-    Header,
-  },
+  components: { Header },
 };
 </script>
