@@ -18,7 +18,10 @@ header
       router-link.navigate(tag="div" to="/") Header
     .frow.row-between.items-center.height-100
       .mx-10 Settings
-      router-link.navigate(tag="div" to="Profile") Profile
+      router-link.navigate.mx-10(tag="div" to="SignUp") Sign Up
+      router-link.navigate.mx-10(tag="div" to="SignIn") Sign In
+
+      router-link.navigate.mx-10(tag="div" to="Profile") Profile
 </template>
 
 <script>
