@@ -1,6 +1,6 @@
 <style scoped lang="sass">
   .user-list:hover
-    background-color: red 
+    background-color: red
 </style>
 
 <template lang="pug">
@@ -11,9 +11,9 @@ div
 </template>
 
 <script>
-import { Users } from '@/utils/enums/Users.js'
+import { Users } from '@/utils/enums/Users';
 
-import User from '@/components/User.vue'
+import User from '@/components/User.vue';
 
 export default {
   name: 'Home',
@@ -23,13 +23,9 @@ export default {
       'Lumen Lads',
     };
   },
-  components: {
-    User,
-  },
+  components: { User },
   data() {
-    return {
-      users: Users,
-    };
+    return { users: Users };
   },
   methods: {},
 };
