@@ -4,8 +4,26 @@
 
 <template lang="pug">
 div
-  div
-    | hello
+  form
+    label(
+      for="cryptoType"
+    )
+      | Crypto Name
+    input(
+      type="text"
+      id="cryptoType"
+      name="cryptoType"
+    )
+    label(
+      for="accountAddress"
+    )
+      | Account Address
+    input(
+      type="text"
+      id="accountAddress"
+      name="accountAddress"
+    )
+
 </template>
 
 <script>
